@@ -33,17 +33,21 @@ def cookie_logout(request):
     return response
 
 
-# def session_login(request):
-#     if request.method == "GET":
-#         return render(request, "s_login.html")
-#     username: str = request.POST.get("username")
-#     request.session[SESSION_KEYNAME] = username
-#     return redirect(reverse("cst:s_user"))
+def session_login(request):
+    if request.method == "GET":
+        return render(request, "s_login.html")
+    username: str = request.POST.get("username")
+    request.session[SESSION_KEYNAME] = username
+    return redirect(reverse("cst:s_user"))
 
 
-# def session_logout(request):
-#     return None
+def session_logout(request):
+    request.session.flush()
+    return redirect(reverse("cst:s_login"))
 
 
-# def session_user(request):
-#     return None
+def session_user(request):
+    username = request.session.get(SESSION_KEYNAME)
+    if username:
+        return render(request, "s_user.html", context=locals())
+    return redirect(reverse("cst:s_login"))

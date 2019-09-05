@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<ul>
+    <form class="{% url 'cst:s_login' %}" , method="post">
+        {% csrf_token %}
+        <span>用户名：</span> <input type="text" , placeholder="请输入用户名" , name="username">
+        <br>
+        <button type="submit">提交</button>
+    </form>
+</ul>
+
+</body>
+</html>
