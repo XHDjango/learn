@@ -7,7 +7,7 @@
 <body>
 
 <ul>
-    <form class="{% url 'cst:login' %}" , method="post">
+    <form class="{% url 'cst:c_login' %}" , method="post">
         {% csrf_token %}
         <span>用户名：</span> <input type="text" , placeholder="请输入用户名" , name="username">
         <br>
