@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Info</title>
+</head>
+<body>
+
+<ul>
+    {% for person in persons %}
+        <a>{{ person.id }}-{{ person.name }}</a>
+        <a href="{% url 'learn_model:del_person' person.id %}">del</a>
+        <br>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for idcard in idcards %}
+        <a>{{ idcard.id_num }}-{{ idcard.person_id }}</a>
+        <a href="{% url 'learn_model:del_idcard' idcard.id_num %}">del</a>
+        <br>
+    {% endfor %}
+
+</ul>
+
+</body>
+</html>

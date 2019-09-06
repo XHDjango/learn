@@ -1,3 +1,24 @@
+from django.conf import settings
+from django.contrib import auth
 from django.db import models
 
-# Create your models here.
+
+class MySpecialUser(models.Model):
+    user = models.OneToOneField(
+        auth.get_user_model(),
+        on_delete=models.CASCADE,
+    )
+    supervisor = models.OneToOneField(
+        auth.get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='supervisor_of',
+    )
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=16)
+
+
+class IDCard(models.Model):
+    id_num = models.IntegerField(primary_key=True)
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Person</title>
+</head>
+<body>
+
+<ul>
+    <form class="{% url 'learn_model:new_person' %}" , method="post">
+        {% csrf_token %}
+        <span>姓名：</span> <input type="text" , placeholder="请输入姓名" , name="username">
+        <br>
+        <span>身份证：</span> <input type="number" , placeholder="请输入身份证" , name="idcard">
+        <br>
+        <button type="submit">提交</button>
+    </form>
+</ul>
+
+</body>
+</html>
