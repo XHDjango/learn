@@ -22,3 +22,14 @@ class Person(models.Model):
 class IDCard(models.Model):
     id_num = models.IntegerField(primary_key=True)
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
+
+
+class Car(models.Model):
+    name = models.CharField(max_length=32)
+
+    class Meta:
+        abstract = True
+
+
+class Lamborghini(Car):
+    price = models.IntegerField()
