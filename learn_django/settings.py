@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'learn_view',
     'learn_cst',
+    'learn_model',
 ]
 
 MIDDLEWARE = [

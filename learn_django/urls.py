@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('learn_view/', include("learn_view.urls")),
     path('learn_cst/', include("learn_cst.urls")),
+    path('learn_model/', include("learn_model.urls")),
 ]
