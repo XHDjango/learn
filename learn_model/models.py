@@ -33,3 +33,8 @@ class Car(models.Model):
 
 class Lamborghini(Car):
     price = models.IntegerField()
+
+
+class UserInfo(models.Model):
+    name = models.CharField(max_length=16)
+    image = models.ImageField(upload_to="icon")

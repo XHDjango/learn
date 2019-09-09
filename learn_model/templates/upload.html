@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传用户信息</title>
+</head>
+<body>
+
+<form action="{% url 'learn_model:upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <span>用户名:</span><input type="text" placeholder="请输入用户名" name="username">
+    <br>
+    <span>头像:</span><input type="file" name="icon">
+    <br>
+    <button>上传</button>
+</form>
+
+</body>
+</html>

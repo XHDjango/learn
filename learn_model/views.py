@@ -1,5 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Person, IDCard
+from .models import Person, IDCard, UserInfo
 from django.urls import reverse
 
 
@@ -31,3 +32,12 @@ def del_idcard(request, id_num):
     oIDCard = IDCard.objects.get(id_num=id_num)
     oIDCard.delete()
     return redirect(reverse("learn_model:person_info"))
+
+
+def upload(request):
+    if request.method == "GET":
+        return render(request, "upload.html")
+    username = request.POST.get("username")
+    icon = request.FILES.get("icon")
+    UserInfo.objects.create(name=username, image=icon)
+    return HttpResponse("上传成功 %s %s" % (username, icon))

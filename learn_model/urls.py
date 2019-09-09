@@ -13,4 +13,6 @@ urlpatterns = [
     path("person_info", views.show_person_info, name="person_info"),
     path("del_person/<int:person_id>", views.del_person, name="del_person"),
     path("del_idcard/<int:id_num>", views.del_idcard, name="del_idcard"),
+
+    path("upload", views.upload, name="upload"),
 ]
