@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'learn_view',
     'learn_cst',
     'learn_model',
+    'learn_cache',
 ]
 
 MIDDLEWARE = [
