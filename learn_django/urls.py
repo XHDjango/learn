@@ -22,4 +22,5 @@ urlpatterns = [
     path('learn_cst/', include("learn_cst.urls")),
     path('learn_model/', include("learn_model.urls")),
     path('learn_cache/', include("learn_cache.urls")),
+    path('learn_middleware/', include("learn_middleware.urls")),
 ]

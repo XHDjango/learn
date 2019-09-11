@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'learn_cst',
     'learn_model',
     'learn_cache',
+    'learn_middleware',
 ]
 
 MIDDLEWARE = [
+    'learn_middleware.midlleware.static.StaticMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
