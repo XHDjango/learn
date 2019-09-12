@@ -22,11 +22,23 @@ def add_student(request):
 def get_student(request):
     students = Student.objects.all()
     per_page = int(request.GET.get("num", 10))
-    page = int(request.GET.get("page", 1))
-    print("info:", per_page, page)
+    page_index = int(request.GET.get("page", 1))
     paginator = Paginator(students, per_page)
+
+    index = page_index
+    page_list = [index]
+    i = 1
+    while len(page_list) < 5:
+        temp = index - i
+        if temp > 0:
+            page_list.insert(0, temp)
+        temp = index + i
+        if temp < paginator.num_pages:
+            page_list.append(temp)
+        i += 1
+
     data = {
-        "page": paginator.get_page(page),
-        "page_list": paginator.page_range,
+        "page": paginator.get_page(page_index),
+        "page_list": page_list,
     }
     return render(request, "students.html", context=data)
