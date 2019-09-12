@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表</title>
+</head>
+<body>
+
+<ul>
+    {% for student in students %}
+        <ul>{{ student.name }}</ul>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for page_index in page_list %}
+        <ul><a href="{% url 'learn_middleware:get_student' %}?page={{ page_index }}">{{ page_index }}</a></ul>
+    {% endfor %}
+
+</ul>
+</body>
+</html>

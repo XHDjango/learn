@@ -12,4 +12,7 @@ app_name = "learn_middleware"
 urlpatterns = [
     path("static", views.static, name="static"),
     path("anti_scrapy", views.anti_scrapy, name="anti_scrapy"),
+
+    path("add_student",views.add_student,name="add_student"),
+    path("get_student",views.get_student,name="get_student"),
 ]
