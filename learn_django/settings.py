@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'mdeditor',
+
     'learn_view',
     'learn_cst',
     'learn_model',
@@ -129,3 +132,5 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "statics", "upload")
+MEDIA_URL = "/media/"
+
