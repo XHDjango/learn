@@ -15,4 +15,6 @@ urlpatterns = [
 
     path('grade/', views.grade),
     path('grade/<int:grade_id>', views.student, name="student"),
+
+    path('blog_md/', views.BlogMDModelForm.as_view(), name="blog_md"),
 ]

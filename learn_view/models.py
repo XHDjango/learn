@@ -12,5 +12,12 @@ class Student(models.Model):
 
 
 class BlogMDModel(models.Model):
-    title = models.CharField(max_length=128)
-    content = MDTextField()
+    title = models.CharField(max_length=128,verbose_name="标题")
+    content = MDTextField(verbose_name="内容")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "文章"
+        verbose_name_plural = verbose_name
