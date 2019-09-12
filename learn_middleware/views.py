@@ -26,7 +26,7 @@ def get_student(request):
     print("info:", per_page, page)
     paginator = Paginator(students, per_page)
     data = {
-        "students": paginator.get_page(page),
+        "page": paginator.get_page(page),
         "page_list": paginator.page_range,
     }
     return render(request, "students.html", context=data)
