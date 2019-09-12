@@ -22,8 +22,12 @@ def add_student(request):
 def get_student(request):
     students = Student.objects.all()
     per_page = int(request.GET.get("num", 10))
-    page_index = int(request.GET.get("page", 1))
     paginator = Paginator(students, per_page)
+    page_index = int(request.GET.get("page", 1))
+    if page_index < 1:
+        page_index = 1
+    if page_index > paginator.num_pages:
+        page_index = paginator.num_pages
 
     index = page_index
     page_list = [index]
