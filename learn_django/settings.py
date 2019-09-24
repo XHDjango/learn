@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'learn_model',
     'learn_cache',
     'learn_middleware',
+    'learn_form',
 ]
 
 MIDDLEWARE = [

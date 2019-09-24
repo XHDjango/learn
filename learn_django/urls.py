@@ -27,6 +27,7 @@ urlpatterns = [
     path('learn_model/', include("learn_model.urls")),
     path('learn_cache/', include("learn_cache.urls")),
     path('learn_middleware/', include("learn_middleware.urls")),
+    path('learn_form/', include("learn_form.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
