@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/learn_form/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.user }} {{ form.user.errors }}</p>
+    <p>{{ form.gender }} {{ form.gender.errors }}</p>
+    <p>{{ form.city }} {{ form.city.errors }}</p>
+    <p>{{ form.pwd }} {{ form.pwd.errors }}</p>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>

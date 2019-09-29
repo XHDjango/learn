@@ -5,6 +5,10 @@
 @Description: 
 """
 
+from django.urls import path
+from . import views
+
+name = "learn_form"
 urlpatterns = [
-    
+    path("", views.index, name="index"),
 ]
